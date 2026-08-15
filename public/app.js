@@ -274,7 +274,9 @@ function escapeHTML(value) {
     );
 
 }
-
+function showAllProducts() {
+  loadProducts();
+}
 
 /* =========================
    START
