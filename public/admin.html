@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>لوحة تحكم الفنجري</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+        <div class="login-logo">
+            AF
+        </div>
+
+        <span class="login-label">
+            ALFANGARY ADMIN
+        </span>
+
+        <h1>
+            تسجيل الدخول
+        </h1>
+
+        <p>
+            لوحة إدارة الفنجري لفوانيس السيارات
+        </p>
+
+        <form id="loginForm">
+
+            <div class="field">
+                <label>اسم المستخدم</label>
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="اسم المستخدم"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label>كلمة المرور</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="كلمة المرور"
+                    required
+                >
+            </div>
+
+            <button
+                class="main-button"
+                type="submit"
+            >
+                دخول
+            </button>
+
+            <div
+                id="loginError"
+                class="error-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div
+    id="adminApp"
+    class="admin-app hidden"
+>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-mark">
+                AF
+            </div>
+
+            <div>
+                <strong>
+                    ALFANGARY
+                </strong>
+
+                <span>
+                    AUTOMOTIVE LIGHTING
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>⌂</span>
+                الرئيسية
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="products"
+            >
+                <span>◈</span>
+                المنتجات
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="services"
+            >
+                <span>◇</span>
+                الخدمات
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="/"
+                target="_blank"
+                class="side-link"
+            >
+                ↗ مشاهدة الموقع
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="side-link logout"
+            >
+                ⇥ تسجيل الخروج
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="topbar-label">
+                    ALFANGARY / ADMIN
+                </span>
+
+                <h1 id="pageTitle">
+                    لوحة التحكم
+                </h1>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <span
+                    id="connectionStatus"
+                    class="status"
+                >
+                    ● متصل
+                </span>
+
+                <a
+                    href="/"
+                    target="_blank"
+                    class="outline-button"
+                >
+                    الموقع
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="dashboardSection"
+            class="admin-section active-section"
+        >
+
+            <div class="welcome">
+
+                <span>
+                    CONTROL CENTER
+                </span>
+
+                <h2>
+                    أهلاً بك في لوحة التحكم
+                </h2>
+
+                <p>
+                    تحكم في المنتجات والخدمات المعروضة على موقع الفنجري.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◈
+                    </div>
+
+                    <div>
+                        <span>
+                            المنتجات
+                        </span>
+
+                        <strong id="productsCount">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ◇
+                    </div>
+
+                    <div>
+                        <span>
+                            الخدمات
+                        </span>
+
+                        <strong id="servicesCount">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>
+                            حالة الموقع
+                        </span>
+
+                        <strong>
+                            LIVE
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span>
+                                QUICK ACTIONS
+                            </span>
+
+                            <h3>
+                                إجراءات سريعة
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <button
+                            class="quick-card"
+                            id="openProductFromDashboard"
+                        >
+
+                            <span class="quick-icon">
+                                +
+                            </span>
+
+                            <strong>
+                                إضافة منتج
+                            </strong>
+
+                            <small>
+                                أضف فانوس جديد
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="quick-card"
+                            id="openServiceFromDashboard"
+                        >
+
+                            <span class="quick-icon">
+                                +
+                            </span>
+
+                            <strong>
+                                إضافة خدمة
+                            </strong>
+
+                            <small>
+                                أضف خدمة جديدة
+                            </small>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span>
+                                SYSTEM
+                            </span>
+
+                            <h3>
+                                حالة النظام
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="system-row">
+
+                        <span>
+                            السيرفر
+                        </span>
+
+                        <b>
+                            Online
+                        </b>
+
+                    </div>
+
+                    <div class="system-row">
+
+                        <span>
+                            قاعدة البيانات
+                        </span>
+
+                        <b>
+                            JSON
+                        </b>
+
+                    </div>
+
+                    <div class="system-row">
+
+                        <span>
+                            الصور
+                        </span>
+
+                        <b>
+                            Uploads
+                        </b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section
+            id="productsSection"
+            class="admin-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        INVENTORY
+                    </span>
+
+                    <h2>
+                        المنتجات
+                    </h2>
+
+                    <p>
+                        إدارة فوانيس السيارات الموجودة على الموقع.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="openProductModal"
+                    class="main-button"
+                >
+                    + إضافة منتج
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="table-toolbar">
+
+                    <div>
+
+                        <strong>
+                            قائمة المنتجات
+                        </strong>
+
+                        <span id="productsTotal">
+                            0 منتج
+                        </span>
+
+                    </div>
+
+                    <button
+                        id="refreshProducts"
+                        class="small-button"
+                    >
+                        ↻ تحديث
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    المنتج
+                                </th>
+
+                                <th>
+                                    الماركة
+                                </th>
+
+                                <th>
+                                    الموديل
+                                </th>
+
+                                <th>
+                                    السنة
+                                </th>
+
+                                <th>
+                                    الجانب
+                                </th>
+
+                                <th>
+                                    السعر
+                                </th>
+
+                                <th>
+                                    الحالة
+                                </th>
+
+                                <th>
+                                    الإجراء
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productsTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <section
+            id="servicesSection"
+            class="admin-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        SERVICES
+                    </span>
+
+                    <h2>
+                        الخدمات
+                    </h2>
+
+                    <p>
+                        الخدمات التي يقدمها محل الفنجري.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="openServiceModal"
+                    class="main-button"
+                >
+                    + إضافة خدمة
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="table-toolbar">
+
+                    <div>
+
+                        <strong>
+                            قائمة الخدمات
+                        </strong>
+
+                        <span id="servicesTotal">
+                            0 خدمة
+                        </span>
+
+                    </div>
+
+                    <button
+                        id="refreshServices"
+                        class="small-button"
+                    >
+                        ↻ تحديث
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    الخدمة
+                                </th>
+
+                                <th>
+                                    الوصف
+                                </th>
+
+                                <th>
+                                    السعر
+                                </th>
+
+                                <th>
+                                    الصورة
+                                </th>
+
+                                <th>
+                                    الإجراء
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="servicesTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCT MODAL
+===================================================== -->
+
+<div
+    id="productModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    NEW PRODUCT
+                </span>
+
+                <h2>
+                    إضافة منتج
+                </h2>
+
+            </div>
+
+            <button
+                class="close-modal"
+                data-close="productModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            id="productForm"
+            class="modal-form"
+            enctype="multipart/form-data"
+        >
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label>
+                        اسم المنتج *
+                    </label>
+
+                    <input
+                        name="name"
+                        placeholder="مثال: W206 Left"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        الماركة
+                    </label>
+
+                    <input
+                        name="brand"
+                        placeholder="Mercedes"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        الموديل
+                    </label>
+
+                    <input
+                        name="model"
+                        placeholder="W206"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        السنة
+                    </label>
+
+                    <input
+                        name="year"
+                        placeholder="2022"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        الجانب
+                    </label>
+
+                    <select name="side">
+
+                        <option value="">
+                            اختر الجانب
+                        </option>
+
+                        <option value="Left">
+                            Left
+                        </option>
+
+                        <option value="Right">
+                            Right
+                        </option>
+
+                        <option value="Left & Right">
+                            Left & Right
+                        </option>
+
+                        <option value="Rear">
+                            Rear
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        السعر
+                    </label>
+
+                    <input
+                        name="price"
+                        placeholder="35000"
+                    >
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>
+                        صورة المنتج
+                    </label>
+
+                    <input
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <label class="checkbox">
+
+                    <input
+                        name="available"
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span>
+                        المنتج متاح للبيع
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    data-close="productModal"
+                >
+                    إلغاء
+                </button>
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    إضافة المنتج
+                </button>
+
+            </div>
+
+
+            <div
+                id="productFormMessage"
+                class="form-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SERVICE MODAL
+===================================================== -->
+
+<div
+    id="serviceModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    NEW SERVICE
+                </span>
+
+                <h2>
+                    إضافة خدمة
+                </h2>
+
+            </div>
+
+            <button
+                class="close-modal"
+                data-close="serviceModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            id="serviceForm"
+            class="modal-form"
+            enctype="multipart/form-data"
+        >
+
+            <div class="form-grid">
+
+                <div class="field full">
+
+                    <label>
+                        اسم الخدمة *
+                    </label>
+
+                    <input
+                        name="name"
+                        placeholder="مثال: إصلاح الفوانيس"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>
+                        وصف الخدمة
+                    </label>
+
+                    <textarea
+                        name="description"
+                        placeholder="اكتب تفاصيل الخدمة..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        السعر
+                    </label>
+
+                    <input
+                        name="price"
+                        placeholder="حسب الحالة"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        صورة الخدمة
+                    </label>
+
+                    <input
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    data-close="serviceModal"
+                >
+                    إلغاء
+                </button>
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    إضافة الخدمة
+                </button>
+
+            </div>
+
+
+            <div
+                id="serviceFormMessage"
+                class="form-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

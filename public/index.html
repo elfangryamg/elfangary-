@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الفنجري | لفوانيس السيارات</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="#home" class="site-logo">
+            <span class="logo-main">ALFANGARY</span>
+            <span class="logo-sub">لـفـوانـيـس الـسـيـارات</span>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="#home" class="active">الرئيسية</a>
+            <a href="#products">الفوانيس</a>
+            <a href="#services">خدماتنا</a>
+            <a href="#contact">تواصل معنا</a>
+
+        </nav>
+
+        <a
+            href="https://wa.me/201068447584"
+            target="_blank"
+            class="header-contact"
+        >
+            واتساب
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+    <section class="hero">
+
+        <div class="hero-image"></div>
+
+        <div class="hero-shade"></div>
+
+        <div class="hero-content">
+
+            <div class="hero-location">
+                الحرفيين · القاهرة
+            </div>
+
+            <div class="hero-title">
+
+                <span class="hero-small">
+                    ALFANGARY
+                </span>
+
+                <h1>
+                    الفنجري
+                </h1>
+
+                <span class="hero-line"></span>
+
+                <p>
+                    لفوانيس السيارات
+                </p>
+
+            </div>
+
+            <p class="hero-description">
+                فوانيس وقطع غيار السيارات
+                <br>
+                بأفضل جودة وأسعار مناسبة
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#products" class="btn btn-light">
+                    اكتشف الفوانيس
+                    <span>←</span>
+                </a>
+
+                <a
+                    href="https://wa.me/201068447584"
+                    target="_blank"
+                    class="btn btn-outline"
+                >
+                    تواصل معنا
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-bottom">
+
+            <span>01</span>
+
+            <div class="hero-progress">
+                <span></span>
+            </div>
+
+            <span>03</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section id="products" class="products-section">
+
+        <div class="container">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="eyebrow">
+                        OUR COLLECTION
+                    </span>
+
+                    <h2>
+                        اختار فانوس عربيتك
+                    </h2>
+
+                </div>
+
+                <p>
+                    مجموعة من الفوانيس والقطع المتوفرة
+                    <br>
+                    لدى الفنجري
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-panel">
+
+                <div class="search-item">
+
+                    <label>الماركة</label>
+
+                    <input
+                        id="brand"
+                        type="text"
+                        placeholder="Mercedes"
+                    >
+
+                </div>
+
+
+                <div class="search-item">
+
+                    <label>الموديل</label>
+
+                    <input
+                        id="model"
+                        type="text"
+                        placeholder="W206"
+                    >
+
+                </div>
+
+
+                <div class="search-item">
+
+                    <label>السنة</label>
+
+                    <input
+                        id="year"
+                        type="text"
+                        placeholder="2022"
+                    >
+
+                </div>
+
+
+                <button
+                    onclick="loadProducts()"
+                    class="search-submit"
+                >
+                    بحث
+                    <span>⌕</span>
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCTS HEADER -->
+
+            <div class="products-title">
+
+                <div>
+                    <span>01</span>
+                    <h3>الفوانيس</h3>
+                </div>
+
+                <span class="title-line"></span>
+
+                <span class="products-count">
+                    منتجاتنا
+                </span>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+
+            <div
+                id="productsGrid"
+                class="products-grid"
+            >
+            </div>
+
+
+            <div class="products-more">
+
+                <button
+                    onclick="showAllProducts()"
+                    class="outline-button"
+                >
+                    عرض كل المنتجات
+                    <span>←</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services" class="services-section">
+
+        <div class="container">
+
+            <div class="section-top services-top">
+
+                <div>
+
+                    <span class="eyebrow">
+                        WHAT WE DO
+                    </span>
+
+                    <h2>
+                        خدماتنا
+                    </h2>
+
+                </div>
+
+                <p>
+                    كل ما تحتاجه لفانوس سيارتك
+                    <br>
+                    في مكان واحد
+                </p>
+
+            </div>
+
+
+            <div
+                id="servicesGrid"
+                class="services-grid"
+            >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="contact-background"></div>
+
+        <div class="contact-overlay"></div>
+
+        <div class="container contact-inner">
+
+            <div>
+
+                <span class="eyebrow">
+                    NEED HELP?
+                </span>
+
+                <h2>
+                    مش لاقي فانوس عربيتك؟
+                </h2>
+
+                <p>
+                    ابعتلنا صورة الفانوس أو العربية
+                    <br>
+                    وهنساعدك تحدد القطعة المناسبة.
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/201068447584"
+                target="_blank"
+                class="contact-btn"
+            >
+                تواصل على واتساب
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-logo">
+
+            <strong>ALFANGARY</strong>
+
+            <span>
+                الفنجري لفوانيس السيارات
+            </span>
+
+        </div>
+
+
+        <div class="footer-location">
+            الحرفيين · القاهرة
+        </div>
+
+
+        <div class="footer-copy">
+            © 2026 ALFANGARY
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
