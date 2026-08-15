@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 const ADMIN_USER = process.env.ADMIN_USER;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-
 const publicDir = path.join(__dirname, "public");
 const uploadDir = path.join(publicDir, "uploads");
 const dataFile = path.join(__dirname, "data.json");
