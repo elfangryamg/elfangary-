@@ -1555,10 +1555,9 @@ img {
 .product-card .no-image {
     border-radius: 14px 14px 0 0;
 }
-/* =========================================================
-   HERO CAR IMAGE
-   الصورة تندمج مع تصميم الـ Hero
-========================================================= */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     position: relative;
@@ -1567,106 +1566,90 @@ img {
 }
 
 
-/* مكان الصورة - ناحية الشمال */
+/* صورة العربية ناحية الشمال */
 
 .hero-image {
     position: absolute;
 
-    left: 0;
     top: 0;
+    left: 0;
 
-    width: 55%;
+    width: 52%;
     height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    background-image: url("/images/hero-lamp.png");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 
     z-index: 1;
 
-    pointer-events: none;
-}
-
-
-/* الصورة نفسها */
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: right center;
-
-    display: block;
-
-    /* دمج أطراف الصورة مع الخلفية */
+    /* دمج الصورة مع خلفية الموقع */
     -webkit-mask-image:
         linear-gradient(
             to right,
-            transparent 0%,
-            rgba(0,0,0,.25) 8%,
-            #000 22%,
-            #000 72%,
-            rgba(0,0,0,.85) 88%,
+            #000 0%,
+            #000 55%,
+            rgba(0,0,0,.85) 68%,
+            rgba(0,0,0,.45) 82%,
             transparent 100%
         );
 
     mask-image:
         linear-gradient(
             to right,
-            transparent 0%,
-            rgba(0,0,0,.25) 8%,
-            #000 22%,
-            #000 72%,
-            rgba(0,0,0,.85) 88%,
+            #000 0%,
+            #000 55%,
+            rgba(0,0,0,.85) 68%,
+            rgba(0,0,0,.45) 82%,
             transparent 100%
         );
 }
 
 
-/* دمج الصورة من فوق وتحت */
-
-.hero-image::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff 0%,
-            transparent 12%,
-            transparent 85%,
-            #ffffff 100%
-        );
-
-    pointer-events: none;
-}
-
-
-/* نخلي محتوى الموقع فوق الصورة */
+/* منع الـ shade من تغطية الصورة */
 
 .hero-shade {
     z-index: 2;
 }
 
+
+/* الكلام ناحية اليمين */
+
 .hero-content {
     position: relative;
     z-index: 3;
+
+    margin-right: 0;
+    margin-left: auto;
+
+    width: 52%;
+
+    padding-left: 5%;
+    padding-right: 4%;
 }
 
-.hero-bottom {
+
+/* الأزرار والكلام يفضلوا فوق الصورة */
+
+.hero-actions,
+.hero-title,
+.hero-description,
+.hero-location {
+    position: relative;
     z-index: 4;
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 700px) {
+
+    .hero {
+        min-height: 750px;
+    }
 
     .hero-image {
         width: 100%;
@@ -1677,18 +1660,14 @@ img {
 
         opacity: .28;
 
-        align-items: flex-end;
-    }
-
-    .hero-image img {
-        object-position: center bottom;
+        background-position: center;
 
         -webkit-mask-image:
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                #000 30%,
-                #000 75%,
+                #000 35%,
+                #000 70%,
                 transparent 100%
             );
 
@@ -1696,10 +1675,17 @@ img {
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                #000 30%,
-                #000 75%,
+                #000 35%,
+                #000 70%,
                 transparent 100%
             );
     }
 
+    .hero-content {
+        width: 100%;
+
+        padding: 70px 20px 0;
+
+        text-align: right;
+    }
 }
