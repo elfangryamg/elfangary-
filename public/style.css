@@ -1539,3 +1539,10 @@ img {
     }
 
 }
+.btn,
+.header-contact,
+.search-submit,
+.outline-button,
+.contact-btn {
+    border-radius: 10px;
+}
