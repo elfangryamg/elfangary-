@@ -1546,3 +1546,12 @@ img {
 .contact-btn {
     border-radius: 10px;
 }
+.product-card {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.product-card img,
+.product-card .no-image {
+    border-radius: 0;
+}
