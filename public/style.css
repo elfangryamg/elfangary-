@@ -1555,125 +1555,152 @@ img {
 .product-card .no-image {
     border-radius: 14px 14px 0 0;
 }
-/* =========================
-   HERO IMAGE - FIXED
-========================= */
+/* =====================================================
+   HERO - FINAL FIX
+===================================================== */
 
 .hero {
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    min-height: 700px;
+    position: relative !important;
+    display: block !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    min-height: 700px !important;
+    background: #ffffff !important;
 }
 
-/* الصورة ناحية الشمال */
+/* العربية في الشمال */
 .hero-image {
-    position: absolute;
+    position: absolute !important;
 
-    top: 0;
-    left: 0;
+    left: 0 !important;
+    right: auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
 
-    width: 55%;
-    height: 100%;
+    width: 52% !important;
+    height: 100% !important;
 
-    background-image: url("/images/hero-lamp.png");
-    background-repeat: no-repeat;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    /* إظهار الصورة كاملة بدون تكبير وقص */
-    background-size: contain;
-    background-position: left center;
+    background-image: url("/images/hero-lamp.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    background-size: cover !important;
 
-    z-index: 1;
+    z-index: 1 !important;
 
-    /* دمج الحواف مع الأبيض */
+    /* دمج الطرف ناحية الكلام */
     -webkit-mask-image:
         linear-gradient(
             to right,
             #000 0%,
-            #000 55%,
+            #000 58%,
             rgba(0,0,0,.9) 68%,
-            rgba(0,0,0,.55) 82%,
-            rgba(0,0,0,.15) 94%,
+            rgba(0,0,0,.55) 80%,
+            rgba(0,0,0,.15) 92%,
             transparent 100%
-        );
+        ) !important;
 
     mask-image:
         linear-gradient(
             to right,
             #000 0%,
-            #000 55%,
+            #000 58%,
             rgba(0,0,0,.9) 68%,
-            rgba(0,0,0,.55) 82%,
-            rgba(0,0,0,.15) 94%,
+            rgba(0,0,0,.55) 80%,
+            rgba(0,0,0,.15) 92%,
             transparent 100%
-        );
+        ) !important;
 }
 
-/* المحتوى ناحية اليمين */
+/* الكلام في اليمين */
 .hero-content {
-    position: relative;
-    z-index: 5;
+    position: relative !important;
 
-    width: 50%;
-    margin-right: 0;
-    margin-left: auto;
+    z-index: 10 !important;
 
-    padding-right: 5%;
+    width: 48% !important;
+
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    padding-right: 5% !important;
+    padding-left: 3% !important;
+
+    margin-inline-start: auto !important;
 }
 
-/* نخلي الـshade تحت الصورة والكلام */
+/* الطبقة تحت الكلام */
 .hero-shade {
-    z-index: 2;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* الكلام فوق كل حاجة */
+.hero-location,
+.hero-title,
+.hero-description,
+.hero-actions {
+    position: relative !important;
+    z-index: 11 !important;
 }
 
 .hero-bottom {
-    z-index: 6;
+    position: absolute !important;
+    z-index: 12 !important;
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 700px) {
 
     .hero {
-        min-height: 700px;
+        min-height: 700px !important;
     }
 
     .hero-image {
-        width: 100%;
-        height: 55%;
+        left: 0 !important;
+        right: auto !important;
 
-        top: auto;
-        bottom: 0;
+        width: 100% !important;
+        height: 55% !important;
 
-        background-size: contain;
-        background-position: left bottom;
+        top: auto !important;
+        bottom: 0 !important;
 
-        opacity: .25;
+        background-size: cover !important;
+        background-position: left bottom !important;
+
+        opacity: .25 !important;
 
         -webkit-mask-image:
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                rgba(0,0,0,.5) 25%,
-                #000 55%,
+                #000 45%,
                 transparent 100%
-            );
+            ) !important;
 
         mask-image:
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                rgba(0,0,0,.5) 25%,
-                #000 55%,
+                #000 45%,
                 transparent 100%
-            );
+            ) !important;
     }
 
     .hero-content {
-        width: 100%;
-        padding: 60px 20px 0;
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 60px 20px 0 !important;
     }
 }
