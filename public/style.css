@@ -1556,42 +1556,44 @@ img {
     border-radius: 14px 14px 0 0;
 }
 /* =========================
-   HERO
+   HERO IMAGE - FIXED
 ========================= */
 
 .hero {
     position: relative;
     overflow: hidden;
-    background: #ffffff;
+    background: #fff;
+    min-height: 700px;
 }
 
-
-/* صورة العربية ناحية الشمال */
-
+/* الصورة ناحية الشمال */
 .hero-image {
     position: absolute;
 
     top: 0;
     left: 0;
 
-    width: 52%;
+    width: 55%;
     height: 100%;
 
     background-image: url("/images/hero-lamp.png");
-    background-size: cover;
-    background-position: center right;
     background-repeat: no-repeat;
+
+    /* إظهار الصورة كاملة بدون تكبير وقص */
+    background-size: contain;
+    background-position: left center;
 
     z-index: 1;
 
-    /* دمج الصورة مع خلفية الموقع */
+    /* دمج الحواف مع الأبيض */
     -webkit-mask-image:
         linear-gradient(
             to right,
             #000 0%,
             #000 55%,
-            rgba(0,0,0,.85) 68%,
-            rgba(0,0,0,.45) 82%,
+            rgba(0,0,0,.9) 68%,
+            rgba(0,0,0,.55) 82%,
+            rgba(0,0,0,.15) 94%,
             transparent 100%
         );
 
@@ -1600,44 +1602,32 @@ img {
             to right,
             #000 0%,
             #000 55%,
-            rgba(0,0,0,.85) 68%,
-            rgba(0,0,0,.45) 82%,
+            rgba(0,0,0,.9) 68%,
+            rgba(0,0,0,.55) 82%,
+            rgba(0,0,0,.15) 94%,
             transparent 100%
         );
 }
 
+/* المحتوى ناحية اليمين */
+.hero-content {
+    position: relative;
+    z-index: 5;
 
-/* منع الـ shade من تغطية الصورة */
+    width: 50%;
+    margin-right: 0;
+    margin-left: auto;
 
+    padding-right: 5%;
+}
+
+/* نخلي الـshade تحت الصورة والكلام */
 .hero-shade {
     z-index: 2;
 }
 
-
-/* الكلام ناحية اليمين */
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-
-    margin-right: 0;
-    margin-left: auto;
-
-    width: 52%;
-
-    padding-left: 5%;
-    padding-right: 4%;
-}
-
-
-/* الأزرار والكلام يفضلوا فوق الصورة */
-
-.hero-actions,
-.hero-title,
-.hero-description,
-.hero-location {
-    position: relative;
-    z-index: 4;
+.hero-bottom {
+    z-index: 6;
 }
 
 
@@ -1648,7 +1638,7 @@ img {
 @media (max-width: 700px) {
 
     .hero {
-        min-height: 750px;
+        min-height: 700px;
     }
 
     .hero-image {
@@ -1658,16 +1648,17 @@ img {
         top: auto;
         bottom: 0;
 
-        opacity: .28;
+        background-size: contain;
+        background-position: left bottom;
 
-        background-position: center;
+        opacity: .25;
 
         -webkit-mask-image:
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                #000 35%,
-                #000 70%,
+                rgba(0,0,0,.5) 25%,
+                #000 55%,
                 transparent 100%
             );
 
@@ -1675,17 +1666,14 @@ img {
             linear-gradient(
                 to bottom,
                 transparent 0%,
-                #000 35%,
-                #000 70%,
+                rgba(0,0,0,.5) 25%,
+                #000 55%,
                 transparent 100%
             );
     }
 
     .hero-content {
         width: 100%;
-
-        padding: 70px 20px 0;
-
-        text-align: right;
+        padding: 60px 20px 0;
     }
 }
