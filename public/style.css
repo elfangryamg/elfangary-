@@ -1555,3 +1555,6 @@ img {
 .product-card .no-image {
     border-radius: 14px 14px 0 0;
 }
+.hero-image {
+    left: -30px;
+}
