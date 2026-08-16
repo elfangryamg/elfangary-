@@ -1529,10 +1529,60 @@ tbody tr:hover {
     }
 
 }
+/* =====================================================
+   ROUNDED UI
+===================================================== */
+
+/* BUTTONS */
 .btn,
 .header-contact,
 .search-submit,
 .outline-button,
-.contact-btn {
+.contact-btn,
+.main-button,
+.small-button,
+.side-link,
+.nav-item,
+.delete-button,
+.cancel-button,
+.close-modal {
     border-radius: 10px;
+}
+
+
+/* INPUTS */
+.field input,
+.field textarea,
+.field select {
+    border-radius: 10px;
+}
+
+
+/* CARDS */
+.login-box,
+.stat-card,
+.panel,
+.quick-card,
+.service-card,
+.product-card,
+.modal-box {
+    border-radius: 14px;
+}
+
+
+/* ICON BOXES */
+.login-logo,
+.brand-mark,
+.stat-icon,
+.quick-icon,
+.service-icon {
+    border-radius: 10px;
+}
+
+
+/* PRODUCT / TABLE IMAGE */
+.table-product img,
+.table-product .no-image,
+.no-image {
+    border-radius: 8px;
 }
