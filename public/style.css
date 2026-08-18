@@ -1560,3 +1560,8 @@ img {
 .hero-image {
     left: -50px;
 }
+.hero-description {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.8 !important;
+}
