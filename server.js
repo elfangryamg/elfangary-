@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_USER = process.env.ADMIN_USER;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const publicDir = path.join(__dirname, "public");
-const uploadDir = path.join(publicDir, "uploads");
+
+// Vercel لا يسمح بالكتابة داخل ملفات المشروع
+// /tmp هو المكان المؤقت القابل للكتابة
+const uploadDir = path.join("/tmp", "uploads");
+
 const dataFile = path.join(__dirname, "data.json");
 
 fs.mkdirSync(uploadDir, { recursive: true });
@@ -60,6 +64,10 @@ app.use(
 );
 
 app.use(express.static(publicDir));
+app.use(
+  "/uploads",
+  express.static(uploadDir)
+);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
