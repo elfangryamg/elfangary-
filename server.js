@@ -411,13 +411,12 @@ app.use(
 
 /* START */
 
-app.listen(
-  PORT,
-  () => {
-
+if (require.main === module) {
+  app.listen(PORT, () => {
     console.log(
       `Alfangary website running on port ${PORT}`
     );
+  });
+}
 
-  }
-);
+module.exports = app;
