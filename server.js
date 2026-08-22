@@ -11,11 +11,8 @@ const ADMIN_USER = process.env.ADMIN_USER;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const publicDir = path.join(__dirname, "public");
 
-// Vercel لا يسمح بالكتابة داخل ملفات المشروع
-// /tmp هو المكان المؤقت القابل للكتابة
 const uploadDir = path.join("/tmp", "uploads");
-
-const dataFile = path.join(__dirname, "data.json");
+const dataFile = path.join("/tmp", "data.json");
 
 fs.mkdirSync(uploadDir, { recursive: true });
 
