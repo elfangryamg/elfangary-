@@ -119,6 +119,19 @@ app.post("/api/login", (req, res) => {
 
     req.session.admin = true;
 
+req.session.save((err) => {
+  if (err) {
+    console.error("SESSION SAVE ERROR:", err);
+    return res.status(500).json({
+      error: "فشل حفظ الجلسة"
+    });
+  }
+
+  return res.json({
+    ok: true
+  });
+});
+
     return res.json({
       ok: true
     });
