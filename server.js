@@ -408,14 +408,9 @@ app.use(
   }
 );
 
-
-/* START */
-
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(
-      `Alfangary website running on port ${PORT}`
-    );
+    console.log(`Alfangary website running on port ${PORT}`);
   });
 }
 
