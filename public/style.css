@@ -1621,3 +1621,95 @@ img {
         padding: 60px 20px 0 !important;
     }
 }
+/* ================= MOBILE OVERRIDE ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 650px !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+    .hero-image {
+        position: absolute !important;
+        left: -15% !important;
+        right: auto !important;
+        top: 0 !important;
+        width: 115% !important;
+        height: 100% !important;
+        background-size: cover !important;
+        background-position: center left !important;
+    }
+
+    .hero-shade {
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(
+            to right,
+            rgba(255,255,255,0.05) 0%,
+            rgba(255,255,255,0.35) 45%,
+            rgba(255,255,255,0.92) 100%
+        ) !important;
+    }
+
+    .hero-content {
+        position: absolute !important;
+        z-index: 5 !important;
+        right: 5% !important;
+        left: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 48% !important;
+        max-width: 320px !important;
+    }
+
+    .hero-title h1 {
+        font-size: 42px !important;
+        line-height: .95 !important;
+    }
+
+    .hero-title p {
+        font-size: 13px !important;
+    }
+
+    .hero-description {
+        font-size: 10px !important;
+        line-height: 1.9 !important;
+    }
+
+    .hero-actions {
+        display: flex !important;
+        gap: 8px !important;
+    }
+
+    .hero-actions .btn {
+        padding: 10px 11px !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-image {
+        left: -28% !important;
+        width: 125% !important;
+        background-position: center left !important;
+    }
+
+    .hero-content {
+        right: 4% !important;
+        width: 47% !important;
+    }
+
+    .hero-title h1 {
+        font-size: 42px !important;
+    }
+
+    .hero-description {
+        font-size: 10px !important;
+    }
+}
